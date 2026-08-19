@@ -1,0 +1,16 @@
+global-styling:
+  version: VERSION
+  js:
+    js/popper.min.js: { weight: -49 }
+    js/bootstrap.min.js: { weight: -48 }
+    js/barrio.js: {}
+    js/custom.js: {}
+    js/hover.js: {}
+    js/animation.js: {}
+    js/search_results.js: {}
+  css:
+    component:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

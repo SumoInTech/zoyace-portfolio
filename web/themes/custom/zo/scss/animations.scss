@@ -1,0 +1,40 @@
+.move-link {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.cbz {
+  display: inline-block;
+  overflow: hidden; /* Ensures that hidden elements don't show when animating */
+  font-size: 16px;
+}
+
+.cb {
+  display: inline-block;
+  transition: transform 0.5s ease; /* Smooth transition for sliding and fading */
+}
+
+.zoyace {
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+.shrestha {
+  display: inline-block;
+  transform: translateX(1%); /* Initially out of view */
+  transition: transform 0.5s ease; /* Smooth transition for sliding and fading */
+}
+
+.credit-nav:hover .cb {
+  transform: translateX(-100%); /* Slide 'Code by' out to the left */
+}
+
+.credit-nav:hover .zoyace {
+  transform: translateX(-120%); /* Slide 'Zoyace Shrestha' into view */
+}
+
+.credit-nav:hover .shrestha {
+  transform: translateX(-100%); /* Slide 'Zoyace Shrestha' into view */
+}

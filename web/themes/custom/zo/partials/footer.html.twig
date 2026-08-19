@@ -1,0 +1,24 @@
+<footer class="site-footer bg-primary-dark pt-12">
+  {% block footer %}
+    <div class="{{ container }}">
+      {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+        <div class="site-footer__top clearfix">
+          <div class="position-relative">
+            <div class="d-flex flex-md-row flex-column align-items-center mb-p-0 column-gap-3 fw-medium pb-6 border-bottom border-dark">
+              <div>{{ page.footer_first }}</div>
+              <div >{{ page.footer_second }}</div>
+            </div>
+            <div class="position-absolute right-10 top-65 ">{{ page.footer_third }}</div>
+          </div>
+        </div>
+        <div class="footer-contact pt-6">{{ page.footer_fourth }}</div>
+      {% endif %}
+      {% if page.footer_fifth %}
+        <div class="site-footer__bottom pt-6 d-flex flex-column flex-md-row justify-content-between">
+          <div >{{ page.footer_sixth }}</div>
+          <div>{{ page.footer_fifth }}</div>
+        </div>
+      {% endif %}
+    </div>
+  {% endblock %}
+</footer>

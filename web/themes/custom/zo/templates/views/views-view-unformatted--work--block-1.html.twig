@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+<div class="border-bottom border-md-up-none">
+    <div class="container px-4 pb-0 pb-md-4 ">
+        <div class="row pb-4 pb-md-0 border-bottom border-md-down-none">
+            <div class="col-md-6 col-12 fs-8 text-body-tertiary fw-light text-uppercase ">Recent Work</div>
+            <div class="col-md-3 col-12 fs-8 text-md-end text-body-tertiary fw-light text-uppercase d-none d-md-block">Services</div>
+            <div class="col-md-2 col-12 fs-8 text-md-end text-body-tertiary fw-light text-uppercase d-none d-md-block">Location</div>
+            <div class="col-md-1 col-12 fs-8 text-md-end text-body-tertiary fw-light text-uppercase d-none d-md-block">Year</div>
+        </div>
+    </div>
+</div>
+<div class="cursor-circle">
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{ row.content }}
+  </div>
+{% endfor %}
+</div>

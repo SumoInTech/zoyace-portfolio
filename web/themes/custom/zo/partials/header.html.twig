@@ -1,0 +1,69 @@
+{% if is_front %}
+<header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
+    <nav class="navbar navbar-expand-lg bg-transparent p-flexible w-fill position-absolute z-3">
+        <div class="inner-container container-fluid p-0">
+            <div class="navbar-brand credit-nav">
+              <a href="/home" class="move-link text-white">
+                <div class="d-flex flex-row column-gap-1 align-items-center p-md-3 p-0">
+                  <div class="credit">&#169 </div>
+                  <div class="cbz w-125">
+                    <span class="cb">Code by</span>
+                    <span class="z">
+                        <span class="zoyace">Zoyace</span>
+                        <span class="shrestha">Shrestha</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <button class="scale-0 header-toogle-btn d-block border border-0 text-white link-white bg-transparent btn-dot-left pl-3 move-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+            </button>
+            <div class="d-none d-md-block header-toogle-menu  link-white ">{{ page.primary_menu }}</div>
+        </div>
+    </nav>
+</header>
+{% else %}
+<header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
+    <nav class="navbar navbar-expand-lg bg-transparent p-flexible w-fill position-absolute z-3">
+        <div class="inner-container container-fluid p-0">
+            <div class="navbar-brand credit-nav">
+              <a href="/home" class="move-link text-black">
+                <div class="d-flex flex-row column-gap-1 align-items-center p-md-3 p-0">
+                  <div class="credit">&#169 </div>
+                  <div class="cbz w-125">
+                    <span class="cb">Code by</span>
+                    <span class="z">
+                        <span class="zoyace">Zoyace</span>
+                        <span class="shrestha">Shrestha</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <button class="scale-0 header-toogle-btn d-block border border-0 text-black link-black  bg-transparent btn-dot-left pl-3 move-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+            </button>
+            <div class="d-none d-md-block header-toogle-menu link-black">{{ page.primary_menu }}</div>
+        </div>
+    </nav>
+</header>
+{% endif %}
+
+
+
+<div class="offcanvas offcanvas-end bg-black" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header bg-primary-dark">
+    <button type="button" class="btn-close bg-accent p-3 rounded-circle mt-3 mr-3 opacity-100" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-primary-dark d-flex flex-column justify-content-between">
+    <div>
+    <h5 class="offcanvas-title text-secondary-emphasis mx-3 py-3 fs-10 text-uppercase fw-light border-bottom border-light" id="offcanvasRightLabel">Navigation</h5>
+    <div class="mobile-nav-item">{{ page.primary_menu }}</div>
+    </div>
+    <div>{{ page.socials }}</div>
+  </div>
+</div>
+
+
+

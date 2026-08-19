@@ -1,0 +1,562 @@
+.field {
+  &--type-image {
+    img {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.btn-close {
+  --bs-btn-close-bg: url("../images/icons/cross.svg");
+}
+
+.mobile-nav-item {
+  .nav {
+    font-size: calc(clamp(3.25em, 5vw, 4em) * 0.875);
+    flex-direction: column;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+}
+
+.header {
+  transition: all 0.3s ease;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 3rem;
+  z-index: 10;
+
+  .header-toogle-btn {
+    margin-right: 1rem;
+  }
+}
+
+.sticky-menu-btn {
+  background-color: $primary-dark !important;
+  padding: 1.75rem 1.25rem;
+  border-radius: 100%;
+  color: white !important;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $accent-shade !important;
+  }
+}
+
+.scale-0 {
+  @media (min-width: 767.98px) {
+    transform: scale(0) !important;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.scale-1 {
+  @media (min-width: 767.98px) {
+    transform: scale(1) !important;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.page-title {
+  padding-top: calc(clamp(5em, 21vh, 12em) * 1.33);
+
+  h1 {
+    font-size: calc(clamp(3.25em, 7vw, 8em) * 0.875);
+    padding-bottom: calc(clamp(2em, 5vw, 8em) * 0.4);
+    font-weight: 450;
+  }
+
+  @media (max-width: 767.98px) {
+    padding-top: calc(clamp(5em, 15vh, 12em) * 1.33);
+  }
+}
+
+.offcanvas-header .btn-close {
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $accent-shade-dark !important;
+  }
+}
+
+.offcanvas-body {
+  .btn-hover-dot-md-right {
+    &::after {
+      top: 50%;
+      width: calc(clamp(16px, 1.2vw, 19px) / 1.5);
+      height: calc(clamp(16px, 1.2vw, 19px) / 1.5);
+      left: 95%;
+      transform: translate(-50%, -50%) scale(0) rotate(0.001deg);
+      background-color: white;
+    }
+
+    &:hover,
+    &:active,
+    &.active-dot {
+      &::after {
+        transform: translate(-50%, -50%) scale(1) rotate(0.001deg);
+      }
+    }
+  }
+
+  .nav-link {
+    &:hover {
+      color: $primary-shade !important;
+    }
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-gray);
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: -10%;
+  width: 100%;
+  height: 110%;
+  background: #9a9d9e;
+  overflow: hidden;
+  img {
+    width: auto;
+    // height: 100%;
+    height: 85%;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    // Added to adjust the image
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+}
+
+.hero-title {
+  position: absolute;
+  bottom: 15vh;
+  left: 0;
+  width: 100%;
+  overflow-x: clip;
+}
+
+.hero-title-rotation {
+  h1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    line-height: 1;
+    font-size: 17.5vw;
+    font-size: max(9em, 15vw);
+    white-space: nowrap;
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+
+    .dash {
+      padding: 0 3vw;
+    }
+  }
+}
+
+.footer-contact {
+  .targeter {
+    @media (max-width: 767.98px) {
+      flex-direction: column;
+      row-gap: 3rem;
+    }
+  }
+
+  a {
+    padding: 1rem 2rem;
+    border: 1px solid rgb(52, 58, 64);
+    border-radius: 3rem;
+    font-size: clamp(1em, 1.583vw, 1.188em);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $accent-shade;
+    }
+  }
+}
+
+.modal.fade .modal-dialog {
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.modal.fade.show .modal-dialog {
+  transform: scale(1);
+}
+
+.modal-caption {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.modal-dialog {
+  max-width: none !important;
+  width: 55rem;
+
+  // X-Large devices (large desktops, 1200px and up)
+  @media (max-width: 1200px) {
+    width: 50rem;
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (max-width: 992px) {
+    width: 45rem;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (max-width: 768px) {
+    width: 40rem;
+  }
+
+  @media (max-width: 576px) {
+    width: 25rem;
+    margin: auto !important;
+  }
+}
+
+.modal-close {
+  position: absolute !important;
+  right: 25px;
+  top: 25px;
+  z-index: 4;
+  background-color: $accent-shade;
+  opacity: 1;
+  border-radius: 100%;
+  padding: 1rem;
+
+  &:hover {
+    opacity: 1;
+    background-color: $accent-shade-dark;
+  }
+}
+
+.gallery-image-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+
+  .hvvh-1 {
+    grid-area: 1 / 1 / 6 / 7;
+  }
+  .hvvh-2 {
+    grid-area: 1 / 7 / 8 / 13;
+  }
+  .hvvh-3 {
+    grid-area: 6 / 1 / 13 / 7;
+  }
+  .hvvh-4 {
+    grid-area: 8 / 7 / 13 / 13;
+  }
+
+  .vhhv-1 {
+    grid-area: 1 / 1 / 8 / 7;
+  }
+  .vhhv-2 {
+    grid-area: 1 / 7 / 6 / 13;
+  }
+  .vhhv-3 {
+    grid-area: 8 / 1 / 13 / 7;
+  }
+  .vhhv-4 {
+    grid-area: 6 / 7 / 13 / 13;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-image-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+    grid-column-gap: 0;
+    grid-row-gap: 10px;
+  }
+
+  // Must match .gallery-image-grid .hvvh-* / .vhhv-* specificity or mosaics
+  // keep spanning missing columns and collapse to 0 width on mobile.
+  .gallery-image-grid > div,
+  .gallery-image-grid .hvvh-1,
+  .gallery-image-grid .hvvh-2,
+  .gallery-image-grid .hvvh-3,
+  .gallery-image-grid .hvvh-4,
+  .gallery-image-grid .vhhv-1,
+  .gallery-image-grid .vhhv-2,
+  .gallery-image-grid .vhhv-3,
+  .gallery-image-grid .vhhv-4 {
+    grid-area: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  // w-h-100-all forces height:100%, which collapses images when rows are auto
+  .gallery-image-grid.w-h-100-all *:not(.modal):not(.modal *) {
+    height: auto !important;
+  }
+
+  .gallery-image-grid.img-cover img {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+.w-h-100-all *:not(.modal):not(.modal *) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.w-h-100-all .paragraph {
+  padding: 0 !important;
+}
+
+.img-cover img {
+  object-fit: cover !important;
+}
+
+// Dots after sentences
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink2 {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink3 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+.dot-one {
+  opacity: 0;
+  animation: blink 2s linear infinite;
+}
+
+.dot-two {
+  opacity: 0;
+  animation: blink2 2s linear infinite;
+}
+
+.dot-three {
+  opacity: 0;
+  animation: blink3 2s linear infinite;
+}
+
+.middle-line {
+  position: relative;
+}
+
+.middle-line::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* Center the line vertically */
+  left: 0;
+  z-index: 0;
+  width: 100%; /* Full width of the element */
+  height: 0.2px; /* Line thickness */
+  background-color: rgba(28, 29, 32, 0.175); /* Line color */
+  transform: translateY(-50%); /* Adjust for exact centering */
+}
+
+.z-11 {
+  z-index: 11;
+}
+
+.view-work {
+  .search-form {
+    button {
+      background-color: $accent-shade;
+      color: white;
+      transition: all 0.3s ease;
+      border-color: $accent-shade;
+
+      &:hover {
+        background-color: $primary-dark !important;
+        border-color: $primary-dark;
+      }
+    }
+  }
+}
+
+.webform-submission-form {
+  label {
+    font-size: 1.33em;
+    font-weight: 450;
+    padding-top: 2.5em;
+    color: $primary-dark;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .js-form-item {
+    padding-bottom: 1.5rem !important;
+    border-top: 1px solid #dee2e6;
+  }
+
+  input,
+  textarea {
+    border: none;
+    padding: 1rem 0.5rem !important;
+  }
+
+  button {
+    padding: 2rem 1.25rem;
+    background-color: $accent-shade;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+}
+
+// Timeline
+// !important beats simple_timeline's ::after (top:0; height:100%) when that
+// library attaches after the theme and would otherwise leave a stub above the
+// first marker.
+ul.timeline-list {
+  position: relative;
+  // --line-top / --line-height are set from first/last marker centers in JS
+  --line-top: 8px;
+  --line-height: calc(100% - 16px);
+
+  // Base line (always visible)
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 2px !important;
+    height: var(--line-height) !important;
+    top: var(--line-top) !important;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+  }
+
+  // Progress line (overlaps)
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 2px !important;
+    height: var(--line-height) !important;
+    top: var(--line-top) !important;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    background-color: $primary-dark !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); // Bouncy easing
+  }
+
+  &.active::after {
+    transform: translateX(-50%) scaleY(var(--progress, 0));
+  }
+}
+
+ul.timeline-list li.timeline-item {
+  margin-bottom: 5rem;
+}
+
+ul.timeline-list.alternate
+  li.timeline-item.odd
+  .timeline-item-wrapper
+  .timeline-marker {
+  right: -8px;
+}
+
+ul.timeline-list.alternate
+  li.timeline-item.even
+  .timeline-item-wrapper
+  .timeline-marker {
+  left: -8px;
+}
+
+@keyframes markerPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  70% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+ul.timeline-list {
+  li.timeline-item {
+    .timeline-item-wrapper {
+      span.timeline-marker {
+        width: 16px;
+        height: 16px;
+        background: $primary-shade;
+        border: 3px solid white;
+        transition: background-color 0.3s ease;
+
+        &.active {
+          background: $accent-shade;
+          border: 3px solid $primary-shade;
+          animation: markerPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+          // Prevent animation from repeating when scrolling
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+  }
+}

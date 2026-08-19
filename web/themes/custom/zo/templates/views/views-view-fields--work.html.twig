@@ -1,0 +1,17 @@
+<a href="{{ fields.view_node.content|striptags|trim }}" class="work-link-txt ">
+    <div class="border-bottom border-md-up-none">
+        <div class="container py-5 px-4">
+            <div class="d-block d-md-none img-w-100 h-135 img-h-auto overflow-hidden">{{ fields.field_feature_image.content }}</div>
+            <div class="row align-items-center">
+                <div class="work-item-title fs-1-75rem col-md-6 col-12 fw-medium py-3 pb-md-0 border-bottom  border-md-down-none">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>{{ fields.title.content }}</div>
+                        <div class="d-block d-md-none fs-0-75rem fw-light rounded-circle bg-accent text-white p-mini-button move-link">Link</div>
+                    </div>
+                </div>
+                <div class="work-item-service fs-1rem fw-light col-md-6 col-12 text-md-end pt-3 pt-md-0">{{ fields.field_services.content }}</div>
+            </div>
+        </div>
+    </div>
+</a>
+

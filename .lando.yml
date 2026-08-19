@@ -1,0 +1,6 @@
+name: shrestha-zoyace
+recipe: pantheon
+config:
+  framework: drupal8
+  site: shrestha-zoyace
+  id: 4e79cd6a-22cd-418c-8a66-d80f9b85bb6b
