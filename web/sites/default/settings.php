@@ -14,8 +14,6 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  *      a local development environment, to ensure that
  *      the site settings remain consistent.
  */
-include __DIR__ . "/settings.pantheon.php";
-
 /**
  * Skipping permissions hardening will make scaffolding
  * work better, but will also raise a warning when you
@@ -28,7 +26,27 @@ include __DIR__ . "/settings.pantheon.php";
 /**
  * If there is a local settings file, then include it
  */
-$local_settings = __DIR__ . "/settings.local.php";
-if (file_exists($local_settings)) {
-  include $local_settings;
-}
+$databases['default']['default'] = array (
+  'database' => 'u861386594_zo_db',
+  'username' => 'u861386594_zo_ad',
+  'password' => 'Sumoworld@123',
+  'prefix' => '',
+  'host' => '127.0.0.1',
+  'port' => '3306',
+  'isolation_level' => 'READ COMMITTED',
+  'driver' => 'mysql',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+);
+ 
+$settings['hash_salt'] = '_gj6ROOx2RMWRbMYn4iLBDYn6SUN_KXR-jNJmJ07wefLh4cPjXXMowgFdJSzLi219dgo-VV97A';
+
+// $settings['base_url'] = 'https://zoyace.io/';
+
+
+// $config['system.logging']['error_level'] = 'verbose';
+// ini_set('display_errors', TRUE);
+// ini_set('display_startup_errors', TRUE);
+// error_reporting(E_ALL);
+
+$settings['update_free_access'] = FALSE;
+$settings['config_sync_directory'] = 'sites/default/files/sync';
