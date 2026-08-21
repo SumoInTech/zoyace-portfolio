@@ -97,3 +97,6 @@ node_modules
 
 # Ignore .env files as they are personal
 #/.env
+
+# Hostinger-specific Drupal settings
+/web/sites/default/settings.php
